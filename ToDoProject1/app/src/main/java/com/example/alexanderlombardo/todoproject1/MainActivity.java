@@ -14,8 +14,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 //      **DEFINING CLASSES (AND ASSIGNING VARIABLES?)**
 
-    ArrayList<String> arrayListToDo;
-    ArrayAdapter<String> arrayAdapterToDo;
+    ArrayList<String> arrayListMaster;
+    ArrayAdapter<String> arrayAdapterMaster;
     public ListView listView;
 
 //      **BUILDS ARRAY LIST AND SETS VIEW BASED ON XML; **
@@ -24,16 +24,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        arrayListToDo = new ArrayList<>();
-        arrayAdapterToDo = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayListToDo);
+        arrayListMaster = new ArrayList<>();
+        arrayAdapterMaster = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayListMaster);
         listView = (ListView) findViewById(R.id.listView);
-        listView.setAdapter(arrayAdapterToDo);
+        listView.setAdapter(arrayAdapterMaster);
 
 
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {         //**SETS LONG CLICK LISTENER ON LIST**
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                String pos = arrayAdapterToDo.getItem(position);
-                arrayAdapterToDo.remove(pos);
+                String pos = arrayAdapterMaster.getItem(position);
+                arrayAdapterMaster.remove(pos);
 //                  arrayAdapterToDo.notifyDataSetChanged();           **NOT NEEDED WITH ADAPTER DOING DATA DESTRUCTION**
 //                    switch (position){                               **SWITCH TO TEST POSITION LONG CLICK**
 //                        case 0:
@@ -77,15 +77,9 @@ public class MainActivity extends AppCompatActivity {
         if(listAddList.isEmpty()){
             return;
         }
-        arrayAdapterToDo.add(listAddList);
+        arrayAdapterMaster.add(listAddList);
         EditText editText = (EditText)findViewById(R.id.editText);
         editText.setText("");
     }
-
-      //**INTENT TO MOVE TO ITEM LIST**
- //       Intent intent = new Intent(MainActivity.this, todolistitem.class);
-
-
-
 
 }

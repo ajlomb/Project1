@@ -11,13 +11,13 @@
         android:id="@+id/editTextTwo"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:hint="I understand none of this!"
+        android:hint="Don't Break the App!"
         android:textAlignment="center"
         android:paddingTop="25dp"
         android:textSize="20sp"/>
 
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/listItem"
         android:layout_below="@+id/itemButton"
         android:layout_width="match_parent"
         android:layout_height="320dp"
@@ -32,6 +32,6 @@
         android:background="@android:color/holo_green_light"
         android:id="@+id/itemButton"
         android:layout_below="@id/editTextTwo"
-        android:onClick="itemAddPage"/>
+        android:onClick="listAddTask"/>
 
 </RelativeLayout>
