@@ -9,34 +9,31 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.alexanderlombardo.todoproject1.MainActivity">
 
-    <TextView
-        android:id="@+id/header"
+    <EditText
+        android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:text="Greetester Listly Do-hicky Evar!"
+        android:hint="I understand none of this!"
         android:textAlignment="center"
         android:paddingTop="25dp"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 
     <ListView
-        android:id="@+id/list_view"
-        android:layout_below="@+id/header"
+        android:id="@+id/listView"
+        android:layout_below="@+id/listButton"
         android:layout_width="match_parent"
         android:layout_height="320dp"
-        android:dividerHeight="5dp"
+        android:padding="5dp"
         >
     </ListView>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add List"
         android:background="@android:color/holo_green_light"
-        android:id="@+id/listbutton"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/list_view"
-        android:layout_alignEnd="@+id/list_view"
-        android:layout_below="@+id/list_view"
-        android:onClick="listAdd"/>
+        android:id="@+id/listButton"
+        android:layout_below="@id/editText"
+        android:onClick="listAddPage"/>
 
 </RelativeLayout>
