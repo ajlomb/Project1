@@ -31,48 +31,42 @@ public class MainActivity extends AppCompatActivity {
 
 
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {         //**SETS LONG CLICK LISTENER ON LIST**
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id)
-                {
-                    String pos = arrayAdapterToDo.getItem(position);
-                    arrayAdapterToDo.remove(pos);
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                String pos = arrayAdapterToDo.getItem(position);
+                arrayAdapterToDo.remove(pos);
 //                  arrayAdapterToDo.notifyDataSetChanged();           **NOT NEEDED WITH ADAPTER DOING DATA DESTRUCTION**
 //                    switch (position){                               **SWITCH TO TEST POSITION LONG CLICK**
 //                        case 0:
-//                            // Add code to do when first item gets long clicked
 //                            Toast.makeText(MainActivity.this,"First Item Long Clicked",Toast.LENGTH_SHORT).show();
 //                            break;
 //                        case 1:
-//                            // Add code to do when second item gets long clicked
 //                            Toast.makeText(MainActivity.this,"Second Item Long Clicked",Toast.LENGTH_SHORT).show();
 //                            break;
 //                        case 2:
-//                            // Add code to do when third item gets long clicked
 //                            Toast.makeText(MainActivity.this,"Third Item Long Clicked",Toast.LENGTH_SHORT).show();
 //                            break;
 //                        case 3:
-//                            // Add code to do when fourth item gets long clicked
 //                            Toast.makeText(MainActivity.this,"Fourth Item Long Clicked",Toast.LENGTH_SHORT).show();
 //                            break;
 //                    }
-                    return true;
-                }
+                return true;
+            }
         });
 
 //      **CLICK TO MOVE TO ITEM LIST**
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int postition, short id)
+            public void onItemClick(AdapterView <?> parent, View view, int position, long id)
             {
-                Intent intent = new Intent(this, todolistitem.class);
-                
+                Intent intent = new Intent(MainActivity.this, todolistitem.class);
+                startActivity(intent);
             }
-
-
         });
-    }
 
+
+    }
 
 //      **ADDS ENTRY IN EDIT TEXT FIELD TO MAIN LIST WHEN BUTTON CLICKED; CLEARS DATA AFTER BUTTON CLICK**
 
@@ -90,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
 
       //**INTENT TO MOVE TO ITEM LIST**
  //       Intent intent = new Intent(MainActivity.this, todolistitem.class);
+
+
 
 
 }
