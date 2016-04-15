@@ -21,7 +21,6 @@ public class todolistitem extends MainActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.item_todolist);
         TextView musky = (TextView)findViewById(R.id.humpty);
-//          **DECLARING STUFF SO SHIT DON'T FUCK UP**
         String elonMusk = getIntent().getStringExtra("skeletonKey");
         musky.setText(String.valueOf(elonMusk));
 
