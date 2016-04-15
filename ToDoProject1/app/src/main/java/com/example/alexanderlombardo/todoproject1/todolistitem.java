@@ -7,6 +7,8 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 public class todolistitem extends MainActivity {
@@ -44,9 +46,10 @@ public class todolistitem extends MainActivity {
 //          **CREATES BUTTON FUNCTIONALITY, PASSES EDITTEXT FIELD THROUGH ARRAY TO DISPLAY LIST ITEMS
     public void listAddTask(View v) {
         String listAddItem = ((EditText)findViewById(R.id.editTextTwo)).getText().toString().trim();
-            if (listAddItem.isEmpty()){                                 //  **KEEPS BLANK EDITTEXT FROM BEING PASSED INTO THE ARRAY
-                return;
-            }
+          if (listAddItem.isEmpty()){                                   //  **KEEPS BLANK EDITTEXT FROM BEING PASSED INTO THE ARRAY
+              Toast.makeText(todolistitem.this, "Error, Empty", Toast.LENGTH_LONG).show();
+              return;
+          }
         arrayAdapterItem.add(listAddItem);                              //  **MAKING TEXTEDIT FIELD FRIENDLY BY CLEARING AFTER BUTTON CLICK**
         EditText editTextTwo = (EditText)findViewById(R.id.editTextTwo);
         editTextTwo.setText("");
