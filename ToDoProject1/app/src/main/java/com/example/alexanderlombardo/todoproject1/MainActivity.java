@@ -34,21 +34,6 @@ public class MainActivity extends AppCompatActivity {
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 String pos = arrayAdapterMaster.getItem(position);
                 arrayAdapterMaster.remove(pos);
-//                  arrayAdapterToDo.notifyDataSetChanged();           **NOT NEEDED WITH ADAPTER DOING DATA DESTRUCTION**
-//                    switch (position){                               **SWITCH TO TEST POSITION LONG CLICK**
-//                        case 0:
-//                            Toast.makeText(MainActivity.this,"First Item Long Clicked",Toast.LENGTH_SHORT).show();
-//                            break;
-//                        case 1:
-//                            Toast.makeText(MainActivity.this,"Second Item Long Clicked",Toast.LENGTH_SHORT).show();
-//                            break;
-//                        case 2:
-//                            Toast.makeText(MainActivity.this,"Third Item Long Clicked",Toast.LENGTH_SHORT).show();
-//                            break;
-//                        case 3:
-//                            Toast.makeText(MainActivity.this,"Fourth Item Long Clicked",Toast.LENGTH_SHORT).show();
-//                            break;
-//                    }
                 return true;
             }
         });
@@ -61,25 +46,26 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView <?> parent, View view, int position, long id)
             {
                 Intent intent = new Intent(MainActivity.this, todolistitem.class);
+                intent.putExtra("position", position);
+                String listHeader = arrayListMaster.get(position);
+                intent.putExtra("skeletonKey", listHeader);
                 startActivity(intent);
-            }
-        });
+        }
 
 
+    });
     }
 
 //      **ADDS ENTRY IN EDIT TEXT FIELD TO MAIN LIST WHEN BUTTON CLICKED; CLEARS DATA AFTER BUTTON CLICK**
 
     public void listAddPage(View v) {
-
         String listAddList = ((EditText)findViewById(R.id.editText)).getText().toString().trim();
-
-        if(listAddList.isEmpty()){
-            return;
-        }
+            if(listAddList.isEmpty()){
+                return;
+            }
         arrayAdapterMaster.add(listAddList);
         EditText editText = (EditText)findViewById(R.id.editText);
         editText.setText("");
     }
-
 }
+

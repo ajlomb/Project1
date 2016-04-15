@@ -1,12 +1,10 @@
-package com.example.alexanderlombardo.todoproject1;
-
-/**
- * Created by alexanderlombardo on 4/14/16.
- */
-//public class data extends MainActivity {
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.item_todolist);
-//    }
+//package com.example.alexanderlombardo.todoproject1;
+//
+//import java.util.ArrayList;
+//
+//public class data {
+//    static ArrayList<String> arrayListMain = new ArrayList<>();
+//    static ArrayList<ArrayList<String>> arrayListItem = new ArrayList<>();
 //}
+//
+
