@@ -5,30 +5,34 @@
     android:paddingBottom="16dp"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    android:paddingTop="16dp">
+    android:paddingTop="16dp"
+    android:background="@android:color/darker_gray">
 
-    <EditText
-        android:id="@+id/editTextTwo"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:hint="Don't Break the App!"
-        android:textAlignment="center"
-        android:paddingTop="25dp"
-        android:textSize="20sp"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@+id/itemButton"
         android:id="@+id/humpty"
-        android:padding="5dp"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:background="@android:color/holo_blue_bright"
         android:textColor="@android:color/white"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:gravity="center_vertical"
+        android:textAllCaps="true"/>
+
+    <EditText
+        android:id="@+id/editTextTwo"
+        android:layout_below="@id/humpty"
+        android:layout_width="235dp"
+        android:layout_height="50dp"
+        android:hint="What needs to get done?"
+        android:textAlignment="center"
+        android:paddingTop="5dp"
+        android:textSize="20sp"/>
 
     <ListView
         android:id="@+id/listItem"
-        android:layout_below="@+id/humpty"
+        android:layout_below="@+id/editTextTwo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
@@ -36,12 +40,13 @@
     </ListView>
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="90dp"
+        android:layout_height="45dp"
         android:text="Add Item"
+        android:layout_below="@id/humpty"
         android:background="@android:color/holo_green_light"
         android:id="@+id/itemButton"
-        android:layout_below="@id/editTextTwo"
+        android:layout_alignParentRight="true"
         android:onClick="listAddTask"/>
 
 </RelativeLayout>
