@@ -8,17 +8,16 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
-
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-//      **DEFINING CLASSES (AND ASSIGNING VARIABLES?)**
+//      **DEFINING CLASSES (AND ASSIGNING VARIABLES?) SO THINGS DON'T DIE**
 
     ArrayList<String> arrayListMaster;
     ArrayAdapter<String> arrayAdapterMaster;
     public ListView listView;
 
-//      **BUILDS ARRAY LIST AND SETS VIEW BASED ON XML; **
+//      **BUILDS ARRAY LIST AND SETS VIEW BASED ON XML; TELLS ARRAYLIST WHERE TO PASS DATA**
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +42,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
-            public void onItemClick(AdapterView <?> parent, View view, int position, long id)
-            {
+            public void onItemClick(AdapterView <?> parent, View view, int position, long id) {
                 Intent intent = new Intent(MainActivity.this, todolistitem.class);
                 intent.putExtra("position", position);
                 String listHeader = arrayListMaster.get(position);
@@ -60,12 +58,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void listAddPage(View v) {
         String listAddList = ((EditText)findViewById(R.id.editText)).getText().toString().trim();
-            if(listAddList.isEmpty()){
+            if(listAddList.isEmpty()){                                  //  **KEEPS EMPTY STRINGS FROM BEING ENTERED TO LIST
                 return;
             }
         arrayAdapterMaster.add(listAddList);
         EditText editText = (EditText)findViewById(R.id.editText);
-        editText.setText("");
+        editText.setText("");                                           //  **CLEARS EDITTEXT FIELD ON BUTTON CLICK
     }
 }
 
